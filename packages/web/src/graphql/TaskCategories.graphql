@@ -1,0 +1,10 @@
+query TaskCategories @live {
+    taskCategorys {
+        items {
+            id
+            name
+            owner
+            taskCount
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "ponder-livequery",
+    "packageManager": "pnpm@8.15.6",
+    "private": true,
+    "npmClient": "pnpm",
+    "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "contracts:anvil": "pnpm --filter @ponder-livequery/contracts chain",
+        "contracts:anvil:deploy": "pnpm --filter @ponder-livequery/contracts anvildeploy",
+        "web:wagmi": "pnpm --filter @ponder-livequery/web wagmi",
+        "indexer:dev": "pnpm --filter @ponder-livequery/indexer dev",
+        "web:gqlcodegen": "pnpm --filter @ponder-livequery/web gqlcodegen",
+        "web:dev": "pnpm --filter @ponder-livequery/web dev"
+    },
+    "resolutions": {
+        "graphql": "16.8.1",
+        "viem": "2.9.27"
+    },
+    "engines": {
+        "node": ">=20",
+        "pnpm": ">=8"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.7.1"
+    }
+}

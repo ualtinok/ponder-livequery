@@ -1,0 +1,67 @@
+{
+    "$schema": "https://biomejs.dev/schemas/1.7.1/schema.json",
+    "formatter": {
+        "enabled": true,
+        "formatWithErrors": false,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineEnding": "lf",
+        "lineWidth": 120,
+        "attributePosition": "auto",
+        "ignore": ["src/models/gql", "src/wagmi/generated.ts"]
+    },
+    "organizeImports": { "enabled": true },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "style": {
+                "noNonNullAssertion": "off"
+            }
+        },
+        "ignore": [
+            "build/*",
+            "public/*",
+            "docs/*",
+            "templates/*",
+            "src/serviceWorker.ts",
+            "generated/*",
+            "src/vite-env.d.ts",
+            "src/wagmi/generated.ts",
+            "old/*",
+            "src/generated/gql/index.tsx"
+        ]
+    },
+    "javascript": {
+        "formatter": {
+            "jsxQuoteStyle": "double",
+            "quoteProperties": "asNeeded",
+            "trailingComma": "es5",
+            "semicolons": "always",
+            "arrowParentheses": "always",
+            "bracketSpacing": true,
+            "bracketSameLine": false,
+            "quoteStyle": "single",
+            "attributePosition": "auto"
+        }
+    },
+    "overrides": [
+        {
+            "include": ["**/*.ts?(x)"],
+            "linter": {
+                "rules": {
+                    "complexity": { "noUselessConstructor": "warn", "noExtraBooleanCast": "off" },
+                    "correctness": {
+                        "noInvalidUseBeforeDeclaration": "warn",
+                        "noUndeclaredVariables": "off",
+                        "noUnusedVariables": "warn"
+                    },
+                    "suspicious": {
+                        "noDuplicateClassMembers": "off",
+                        "noRedeclare": "warn"
+                    }
+                }
+            }
+        }
+    ]
+}

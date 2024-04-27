@@ -1,0 +1,15 @@
+query TaskCategoryDetails($categoryId: ID!) @live {
+    taskCategory(id: $categoryId) {
+        tasks {
+            items {
+                categoryId
+                completed
+                content
+                id
+            }
+        }
+        name
+        id
+        owner
+    }
+}

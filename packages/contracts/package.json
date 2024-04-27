@@ -1,0 +1,24 @@
+{
+	"name": "@ponder-livequery/contracts",
+	"description": "ponder livequery contracts",
+	"version": "1.0.0",
+	"dependencies": {
+		"@openzeppelin/contracts": "^5.0.1"
+	},
+	"devDependencies": {
+		"forge-std": "github:foundry-rs/forge-std#v1.8.1",
+		"solhint": "^3.6.2"
+	},
+	"private": true,
+	"scripts": {
+		"clean": "rm -rf cache out",
+		"build": "forge build",
+		"lint": "bun run lint:sol && bun run prettier:check",
+		"lint:sol": "forge fmt --check && bun solhint {script,src,test}/**/*.sol",
+		"test": "forge test",
+		"test:coverage": "forge coverage",
+		"test:coverage:report": "forge coverage --report lcov && genhtml lcov.info --branch-coverage --output-dir coverage",
+		"chain": "source .env.anvil && anvil --config-out localhost.json",
+		"anvildeploy": "forge script scripts/Deploy.s.sol:Deploy --rpc-url http://127.0.0.1:8545 --broadcast"
+	}
+}

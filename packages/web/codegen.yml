@@ -1,0 +1,25 @@
+overwrite: true
+schema: 'http://localhost:42069/graphql'
+documents: 'src/graphql/**/*.graphql'
+require:
+  - ts-node/register
+generates:
+    src/generated/gql/introspection.json:
+        plugins:
+          - 'urql-introspection'
+    src/generated/gql/index.tsx:
+        hooks:
+            afterOneFileWrite:
+                - prettier --write src/generated/gql/index.tsx
+        plugins:
+            - add:
+                content: /* eslint-disable */
+            - typescript
+            - typescript-operations
+            - typescript-urql
+        config:
+          strictScalars: true
+          scalars:
+              DateTime: "Date"
+              BigInt: "bigint"
+              JSON: "Record<string, any>"

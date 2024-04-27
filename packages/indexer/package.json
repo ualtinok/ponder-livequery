@@ -1,0 +1,25 @@
+{
+    "name": "@ponder-livequery/indexer",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "ponder dev",
+        "start": "ponder start",
+        "codegen": "ponder codegen",
+        "lint": "eslint .",
+        "typecheck": "tsc"
+    },
+    "dependencies": {
+        "@ponder/core": "",
+        "viem": "^2.9.27",
+        "@ponder-livequery/web": "workspace:*"
+    },
+    "devDependencies": {
+        "@types/node": "^20.12.7",
+        "typescript": "^5.4.5"
+    },
+    "engines": {
+        "node": ">=18.14"
+    }
+}
