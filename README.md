@@ -1,5 +1,6 @@
 
-0- Clone ponder: 
+0- Clone ponder: https://github.com/ualtinok/ponder
+checkout livequery branch
 
 1- Build cloned ponder
 
